@@ -1,15 +1,15 @@
-# ▲ Vercel AI SDK
+▲ Vercel AI SDK
 
 [![Status](https://img.shields.io/badge/Status-Beta-yellow.svg)]()
 [![Version](https://img.shields.io/badge/Version-0.1.0-blue.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-success.svg)]()
 [![Coverage](https://img.shields.io/badge/Coverage-80%25-brightgreen.svg)]()
-[![Platform](https://img.shields.io/badge/Platform-Vercel-informational.svg)](https://vercel.com/)
+[![Platform](https://img.shields.io/badge/Platform-vercel-informational.svg)](https://vercel.com/)
 
 ## 📋 Overview
 
-Vercel AI SDK with Next.js 16 and server-side streaming
+Vercel AI SDK for edge AI with Next.js 15 and streaming
 
 **Current Version:** 0.1.0 | **Status:** Beta | **Completion:** 75%
 
@@ -19,13 +19,13 @@ Vercel AI SDK with Next.js 16 and server-side streaming
 
 ### What is Vercel AI SDK?
 
-Next-generation AI SDK from Vercel with built-in streaming, hook-based API, and seamless model provider switching. Optimized for Next.js App Router with React Server Components.
+A production-ready AI SDK application showcasing Vercel AI SDK's powerful capabilities for building edge AI with streaming responses. This project demonstrates enterprise-grade patterns for AI-native application development.
 
 ### Why This Project Exists?
 
 The AI SDK landscape is rapidly evolving with powerful frameworks emerging for building AI-native applications. This project serves as:
 
-- **Reference Implementation**: Production-ready code patterns for Vercel AI applications
+- **Reference Implementation**: Production-ready code patterns for Vercel AI SDK applications
 - **Learning Resource**: Best practices for integrating AI capabilities into web applications
 - **Starting Point**: Solid foundation for building your own AI-powered products
 - **Comparison Tool**: Compare different AI SDK approaches across our 10-project ecosystem
@@ -37,20 +37,23 @@ Building AI applications requires integrating multiple complex systems:
 - Context persistence and memory management
 - Vector database operations for RAG
 - Real-time streaming responses
-- Multi-agent orchestration
+- streaming and edge functions
 
 This project provides a complete, working solution to these challenges.
 
 ### Key Features
 
-✨ **Vercel AI Integration**
-- Full-featured Vercel AI v3.0.30 integration
-- Production-ready error handling and retries
-- Streaming and non-streaming response modes
-- Advanced prompt engineering templates
+✨ **Vercel AI SDK Integration**
+- Full-featured Vercel AI SDK
+- Edge runtime for low latency
+- Streaming text generation
+- Automatic UI generation
+- Multi-model support (OpenAI, Anthropic, etc.)
+- Tool use and function calling
+- React hooks for AI integration
 
 🎨 **Modern UI**
-- Next.js v16.1.6 with TypeScript
+- Modern React-based frontend with TypeScript
 - Responsive design with dark mode
 - Real-time updates via WebSocket
 - Accessible components (WCAG 2.1 AA)
@@ -88,25 +91,24 @@ This project provides a complete, working solution to these challenges.
 
 | Technology | Version | Description |
 |------------|---------|-------------|
-| [![Next.js](https://nextjs.org/)](https://img.shields.io/badge/Next.js-16.1.6-61DAFB.svg)] | 16.1.6 | Next.js frontend framework |
-| [![React](https://react.dev/)](https://img.shields.io/badge/React-19.0-61DAFB.svg) | 19.0 | React library for UI |
-| [![TypeScript](https://www.typescriptlang.org/)](https://img.shields.io/badge/TypeScript-5.0-3178C6.svg) | 5.0 | Type-safe JavaScript |
+| [![Next.js](https://nextjs.org/)](https://img.shields.io/badge/Next.js-15.1.0-61DAFB.svg) | 15.1.0 | Next.js frontend framework |
+| [![React](https://react.dev/)](https://img.shields.io/badge/React-19.0-61DAFB.svg) | 19 | React frontend framework |
+| [![TypeScript](https://www.typescriptlang.org/)](https://img.shields.io/badge/TypeScript-5-3178C6.svg) | 5 | Type-safe JavaScript |
 
 ### Backend
 
 | Technology | Version | Description |
 |------------|---------|-------------|
-| [![API Routes](https://nextjs.org/docs/api-routes/introduction)](https://img.shields.io/badge/API%20Routes-15.0-009688.svg)] | 15.0 | API Routes backend framework |
-| [![Vercel AI](https://github.com/vercel/ai)](https://img.shields.io/badge/Vercel%20AI-3.0.30-red.svg) | 3.0.30 | Vercel AI AI SDK |
-| [![Python](https://www.python.org/)](https://img.shields.io/badge/Python-3.12%2B-3776AB.svg) | 3.12+ | Python runtime (if applicable) |
+| [![Next.js API](https://example.com/)](https://img.shields.io/badge/Docs-Documentation-informational.svg) | Routes | Next.js API backend/framework |
+| [![Vercel AI](https://example.com/)](https://img.shields.io/badge/Docs-Documentation-informational.svg) | SDK | Vercel AI backend/framework |
+| [![Node.js](https://nodejs.org/)](https://img.shields.io/badge/Node.js-20%2B-339933.svg) | Latest | Node.js backend/framework |
 
 ### Deployment
 
 | Platform | Purpose |
 |----------|---------|
-| [![Vercel](https://vercel.com/)](https://img.shields.io/badge/Deploy-Vercel-informational.svg) | Primary deployment platform |
-| Docker | Containerization |
-| GitHub Actions | CI/CD pipeline |
+| [![Vercel](https://img.shields.io/badge/Deploy-Vercel-informational.svg)](https://vercel.com/) | Primary deployment platform |
+| [![Edge Functions](https://img.shields.io/badge/Edge-Functions-informational.svg)](https://vercel.com/docs/concepts/functions/edge-functions) | edge functions |
 
 ---
 
@@ -118,9 +120,9 @@ This project provides a complete, working solution to these challenges.
 
 #### ✅ Completed Features
 
-- Core Vercel AI integration
-- Next.js frontend with TypeScript
-- API Routes backend API
+- Core Vercel AI SDK integration
+- Modern frontend with TypeScript
+- Backend API framework
 - PostgreSQL database setup
 - Redis caching layer
 - Authentication system
@@ -275,44 +277,30 @@ docker-compose down
 ## 📁 Project Structure
 
 ```
-
 AI-SDK-VERCEL-AI/
   CLAUDE.md
   CONTRIBUTING.md
-  Dockerfile
   LICENSE
   README.md
-  components.json
-  eslint.config.mjs
-  jest.config.js
-  next-env.d.ts
-  next.config.ts
-  package.json
-  postcss.config.mjs
-  tsconfig.json
-  app/
-    favicon.ico
-    globals.css
-    layout.tsx
-    page.tsx
-    components/
-      Chat.tsx
-      ImageGenerator.tsx
-      ModelSelector.tsx
-      StreamingText.server.tsx
-    api/
-      chat/
-        route.ts
-      health/
-        route.ts
-...
+  frontend/
+    src/
+      components/
+      lib/
+      app/
+  backend/
+    app/
+      api/
+      models/
+      services/
+    tests/
+  docs/
 ```
 
 ### Key Files and Directories
 
 | Path | Purpose |
 |------|---------|
-| `frontend/app/` | Frontend application code (Next.js) |
+| `frontend/src/` | Frontend application code |
 | `frontend/components/` | Reusable UI components |
 | `frontend/lib/` | Utility functions and helpers |
 | `backend/app/` | Backend application code |
@@ -333,17 +321,17 @@ AI-SDK-VERCEL-AI/
 graph TB
     subgraph "Client Layer"
         A[User Browser]
-        B[Next.js Frontend]
+        B[Frontend]
     end
 
     subgraph "API Layer"
         C[API Gateway]
-        D[API Routes Backend]
+        D[Backend API]
         E[Authentication]
     end
 
     subgraph "AI Layer"
-        F[Vercel AI SDK]
+        F[Vercel AI SDK SDK]
         G[LLM Provider]
         H[Vector Store]
         I[Memory Store]
@@ -374,9 +362,9 @@ graph TB
 
 **Architecture Overview:**
 
-1. **Client Layer**: Next.js provides responsive UI with real-time updates
-2. **API Layer**: API Routes handles business logic and request routing
-3. **AI Layer**: Vercel AI orchestrates AI model interactions and workflows
+1. **Client Layer**: Modern frontend provides responsive UI with real-time updates
+2. **API Layer**: Backend framework handles business logic and request routing
+3. **AI Layer**: Vercel AI SDK orchestrates AI model interactions and workflows
 4. **Data Layer**: Persistent storage with caching for optimal performance
 
 **Data Flow:**
@@ -524,7 +512,7 @@ v1.0.0    # Major release (breaking changes)
 
 Release names follow the pattern: **[SDK Name] [Version]**
 
-Example: "LangChain 0.3.0", "CrewAI 0.28.0"
+Example: "Vercel AI SDK Latest"
 
 ### Versioning Strategy
 
@@ -652,6 +640,7 @@ ENABLE_ANALYTICS=false
 | File | Location | Purpose |
 |------|----------|---------|
 | `next.config.js` | `frontend/` | Next.js configuration |
+| `vite.config.ts` | `frontend/` | Vite configuration |
 | `tsconfig.json` | `frontend/` | TypeScript configuration |
 | `tailwind.config.js` | `frontend/` | Tailwind CSS configuration |
 | `pytest.ini` | `backend/` | Pytest configuration |
@@ -1005,9 +994,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full list of contributors.
 
 ### Acknowledgments
 
-- **Vercel AI Team** - For the amazing AI SDK
-- **Next.js Team** - For the excellent frontend framework
-- **API Routes Team** - For the robust backend framework
+- **Vercel AI SDK Team** - For the amazing AI SDK
+- **React Team** - For the excellent frontend framework
+- **FastAPI/Django/Flask Team** - For the robust backend framework
 - **Open Source Community** - For inspiration and feedback
 
 ### Related Projects
