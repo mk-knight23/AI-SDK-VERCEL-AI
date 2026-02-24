@@ -1,10 +1,11 @@
-import { Sparkles } from "lucide-react";
+import { Sparkles, MessageSquare, Image as ImageIcon } from "lucide-react";
 import Chat from "./components/Chat";
+import ImageGenerator from "./components/ImageGenerator";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 px-4 py-12 text-white">
-      <main className="flex w-full max-w-4xl flex-col items-center gap-8">
+    <div className="flex min-h-screen flex-col items-center bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 px-4 py-12 text-white">
+      <main className="flex w-full max-w-6xl flex-col items-center gap-12">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 text-center">
           <div className="flex items-center gap-3 rounded-full bg-zinc-800/50 px-4 py-2 backdrop-blur-sm">
@@ -19,15 +20,34 @@ export default function Home() {
           </h1>
 
           <p className="max-w-lg text-lg text-zinc-400">
-            AI-powered insights platform with real-time streaming responses
+            AI-powered platform with real-time streaming, tool use, and image
+            generation
           </p>
         </div>
 
-        {/* Chat Component */}
-        <Chat />
+        {/* Feature Tabs */}
+        <div className="flex w-full max-w-4xl flex-col gap-8">
+          {/* Chat Section */}
+          <section className="flex flex-col items-center gap-4">
+            <div className="flex items-center gap-2">
+              <MessageSquare className="h-5 w-5 text-amber-400" />
+              <h2 className="text-xl font-semibold">AI Chat with Tools</h2>
+            </div>
+            <Chat />
+          </section>
+
+          {/* Image Generation Section */}
+          <section className="flex flex-col items-center gap-4">
+            <div className="flex items-center gap-2">
+              <ImageIcon className="h-5 w-5 text-amber-400" />
+              <h2 className="text-xl font-semibold">AI Image Generator</h2>
+            </div>
+            <ImageGenerator />
+          </section>
+        </div>
 
         {/* Features Grid */}
-        <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl bg-zinc-800/50 p-6 backdrop-blur-sm">
             <h3 className="font-semibold text-amber-400">Streaming</h3>
             <p className="mt-2 text-sm text-zinc-400">
@@ -35,9 +55,15 @@ export default function Home() {
             </p>
           </div>
           <div className="rounded-xl bg-zinc-800/50 p-6 backdrop-blur-sm">
-            <h3 className="font-semibold text-amber-400">GPT-4o-mini</h3>
+            <h3 className="font-semibold text-amber-400">Tool Use</h3>
             <p className="mt-2 text-sm text-zinc-400">
-              Fast and efficient AI model
+              Weather, calculator, search, and more
+            </p>
+          </div>
+          <div className="rounded-xl bg-zinc-800/50 p-6 backdrop-blur-sm">
+            <h3 className="font-semibold text-amber-400">Image Generation</h3>
+            <p className="mt-2 text-sm text-zinc-400">
+              Create images from text descriptions
             </p>
           </div>
           <div className="rounded-xl bg-zinc-800/50 p-6 backdrop-blur-sm">
@@ -55,18 +81,16 @@ export default function Home() {
             Check Health API
           </a>
           <a
-            href="https://sdk.vercel.ai/docs"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/api/generate-image"
             className="rounded-lg border border-zinc-700 bg-transparent px-6 py-3 text-center font-medium text-white transition-colors hover:bg-zinc-800"
           >
-            AI SDK Docs
+            Image API Docs
           </a>
         </div>
       </main>
 
       <footer className="mt-12 text-sm text-zinc-500">
-        InsightStream - Built with Next.js 15 + Vercel AI SDK
+        InsightStream - Built with Next.js 16 + Vercel AI SDK
       </footer>
     </div>
   );
