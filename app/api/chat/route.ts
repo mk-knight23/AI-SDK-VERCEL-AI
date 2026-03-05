@@ -1,6 +1,15 @@
 import { openai } from "@ai-sdk/openai";
-import { streamText } from "ai";
-import { tools } from "@/lib/tools";
+import { streamText, tool } from "ai";
+import {
+  weatherToolDefinition,
+  executeWeatherTool,
+  calculatorToolDefinition,
+  executeCalculatorTool,
+  webSearchToolDefinition,
+  executeWebSearchTool,
+  imageGenerationToolDefinition,
+  executeImageGenerationTool,
+} from "@/lib/tools";
 import {
   ValidationError,
   formatErrorResponse,
@@ -43,34 +52,26 @@ export async function POST(req: Request) {
       model: selectedModel,
       messages,
       tools: {
-        weather: {
-          description: tools.weather.description,
-          parameters: tools.weather.parameters,
-          execute: async (params: any) => {
-            return await tools.weather.execute(params);
-          },
-        },
-        calculator: {
-          description: tools.calculator.description,
-          parameters: tools.calculator.parameters,
-          execute: async (params: any) => {
-            return await tools.calculator.execute(params);
-          },
-        },
-        webSearch: {
-          description: tools.webSearch.description,
-          parameters: tools.webSearch.parameters,
-          execute: async (params: any) => {
-            return await tools.webSearch.execute(params);
-          },
-        },
-        imageGeneration: {
-          description: tools.imageGeneration.description,
-          parameters: tools.imageGeneration.parameters,
-          execute: async (params: any) => {
-            return await tools.imageGeneration.execute(params);
-          },
-        },
+        weather: tool({
+          description: weatherToolDefinition.description,
+          parameters: weatherToolDefinition.parameters,
+          execute: executeWeatherTool,
+        }),
+        calculator: tool({
+          description: calculatorToolDefinition.description,
+          parameters: calculatorToolDefinition.parameters,
+          execute: executeCalculatorTool,
+        }),
+        webSearch: tool({
+          description: webSearchToolDefinition.description,
+          parameters: webSearchToolDefinition.parameters,
+          execute: executeWebSearchTool,
+        }),
+        imageGeneration: tool({
+          description: imageGenerationToolDefinition.description,
+          parameters: imageGenerationToolDefinition.parameters,
+          execute: executeImageGenerationTool,
+        }),
       },
       maxSteps: 5,
       temperature: body.temperature ?? 0.7,
