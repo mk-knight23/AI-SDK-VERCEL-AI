@@ -1,0 +1,13 @@
+{
+  "name": "AI-SDK-VERCEL-AI",
+  "title": "Vercel AI Edge HQ",
+  "description": "Edge-native TypeScript AI app runtime for low-latency agent UX",
+  "topics": [
+    "vercel-ai-sdk",
+    "typescript",
+    "edge",
+    "streaming",
+    "nextjs"
+  ],
+  "homepage": "https://mk-knight23.github.io/AI-SDK-VERCEL-AI"
+}
